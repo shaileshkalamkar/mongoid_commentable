@@ -23,7 +23,7 @@ class CommentsController < ActionController::Base
   end
 
   def create
-    @comment = @model.create_comment!(params[:comment])
+    @comment = @model.create_comment!(comment_params)
     if @comment.save
       flash[:notice] = 'Comment was successfully created.'
     else
@@ -33,7 +33,7 @@ class CommentsController < ActionController::Base
   end
 
   def update
-    if @comment.update_attributes(params[:comment])
+    if @comment.update_attributes(comment_params)
       flash[:notice] = 'Comment was successfully updated.'
     else
       flash[:error] = 'Comment wasn\'t deleted.'
