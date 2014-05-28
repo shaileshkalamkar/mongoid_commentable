@@ -60,4 +60,8 @@ class CommentsController < ActionController::Base
     @comment = @model.comments.find(params[:id])
   end
 
+  def comment_params
+    params.require(:comment).permit(:author, :text)
+  end
+
 end
