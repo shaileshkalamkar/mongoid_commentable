@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
-gem "mongoid", ">= 2.2"
-gem "bson_ext", ">= 1.3"
+gem "mongoid", '~> 4.0.0.beta1'
+gem "bson_ext", ">= 1.5.1"
 
 group :development do
   gem "rr"
